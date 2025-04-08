@@ -1,8 +1,12 @@
-import React from 'react'
+"use client"
+import {React, useState} from 'react'
 import Card from './components/Card'
 import Navbar from './components/Navbar'
 import Skill from './components/Skill'
+import ChangingText from './components/ChangingText'
+import Footer from './components/Footer'
 const page = () => {
+  const [showSection, setShowSection] = useState(false); // 👈 define the state here
   return (
     <div>
       <section id="main"className='flex flex-col min-h-screen justify-center items-center pb-[6vw] '>
@@ -27,7 +31,7 @@ const page = () => {
       
     </section>
     <section id='projects'className='bg-black min-h-screen flex flex-col p-16'>
-        <h1 className='font-semibold text-5xl mt-4'>Things that may catch your <br></br> attention, our skills</h1>
+        <h1 className='font-semibold text-5xl mt-11'>Things that may catch your <br></br> attention, our skills</h1>
         <p className='text-xl text-[#666666] mt-2'>Skills are the qualities which form one's personality, along with that they  play an important role in <br></br>knowing oneself here are ours.</p>
         <div className='flex mt-4 gap-6'>
           <div className='border-2 border-[#292929] bg-[#0b0b0b] rounded-lg w-[25vw] h-[22vw] p-4 pt-22 pl-7 pr-2'>
@@ -48,8 +52,14 @@ const page = () => {
           </div>
           <div id='lamp3'></div>
         </div>
+
+        
         
     </section>
+    <section className='flex flex-col items-center justify-center min-h-14'>
+    
+    </section>
+    <Footer></Footer>
   </div>
     
   )
