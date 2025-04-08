@@ -5,7 +5,7 @@ import Skill from './components/Skill'
 const page = () => {
   return (
     <div>
-      <section className='flex flex-col min-h-screen justify-center items-center pb-[6vw]'>
+      <section id="main"className='flex flex-col min-h-screen justify-center items-center pb-[6vw] '>
       <Navbar></Navbar>
       <h1 className='text-white font-semibold text-6xl max-w-[70vw] text-center pt-[9vw]'>Innovating with purpose while Building the future.</h1>
       <div className='mt-4 text-[#666666] text-2xl max-w-[67vw] text-center'>Hi! Welcome to vaidik.tech we are a group thriving in various sectors of technology particularly in coding based application we also provide hardware and software solutions. I as the founder welcome you to my project.</div>
@@ -26,16 +26,29 @@ const page = () => {
 
       
     </section>
-    <section className='bg-black min-h-screen flex flex-col items-center p-16'>
-      <h1 className='font-semibold text-4xl text-center max-w-[70vw]'> Hi there! This site is under development, till the time feel free to check out one of my web dev project</h1>
-      <div className="rounded-xl w-[55vw] h-[30vw] border-2 mt-4 border-[#666666] p-4 overflow-hidden">
-      <a href="https://blynkerr-land.vercel.app/"><img
-        src="https://www.google.com/chrome/static/images/dev-components/chrome-gallery-5-2x.webp"
-        alt="Chrome dev tools preview"
-        className="w-full h-full object-cover rounded-lg"
-      />
-      </a>
-    </div>
+    <section id='projects'className='bg-black min-h-screen flex flex-col p-16'>
+        <h1 className='font-semibold text-5xl mt-4'>Things that may catch your <br></br> attention, our skills</h1>
+        <p className='text-xl text-[#666666] mt-2'>Skills are the qualities which form one's personality, along with that they  play an important role in <br></br>knowing oneself here are ours.</p>
+        <div className='flex mt-4 gap-6'>
+          <div className='border-2 border-[#292929] bg-[#0b0b0b] rounded-lg w-[25vw] h-[22vw] p-4 pt-22 pl-7 pr-2'>
+              <img src='/1.webp' className='w-12'></img>
+              <h1 className='text-2xl font-semibold mt-2'>Creative brilliance.</h1>
+              <p className='text-[#666666]'>We thrive on creative brilliance that extends far beyond just writing code. Our team blends technical precision with imaginative thinking to deliver solutions that not only work flawlessly.</p>
+          </div>
+          <div className='border-2 border-[#292929] bg-[#0b0b0b] rounded-lg w-[25vw] h-[22vw] p-4 pt-20 pl-7 pr-2'>
+              <img src='/2.webp' className='w-12'></img>
+              <h1 className='text-2xl font-semibold mt-2'>Critical Thinking</h1>
+              <p className='text-[#666666]'>We approach every challenge with sharp critical thinking, breaking down problems to their core. It’s not just about solutions—it’s about smart, efficient ones.At vaidik.tech, we analyze and adapt.
+</p>
+          </div>
+          <div className='border-2 border-[#292929] bg-[#0b0b0b] rounded-lg w-[25vw] h-[22vw] p-4 pt-21 pl-7 pr-2'>
+              <img src='/3.webp' className='w-12'></img>
+              <h1 className='text-2xl font-semibold mt-2'>Prioritising Effeciency</h1>
+              <p className='text-[#666666]'>We prioritize delivering efficient solutions that save both time and resources. Speed matters—but never at the cost of quality.At vaidik.tech, we streamline every process to meet deadlines.</p>
+          </div>
+          <div id='lamp3'></div>
+        </div>
+        
     </section>
   </div>
     
