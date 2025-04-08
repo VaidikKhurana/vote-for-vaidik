@@ -20,7 +20,94 @@
 }
 
 body {
-  background: var(--background);
+  background: black;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
+:root {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+#lamp1 {
+  width: 800px;
+  height: 900px;
+  position: absolute;
+  left: -600px;
+  top: 250px;
+  background: radial-gradient(
+    ellipse at center,
+    #fff8dc 0%,       /* light cream base */
+    #ffe066 25%,      /* more yellow */
+    #ffc107 45%,      /* deeper warm yellow */
+    #ffb6c1 55%,      /* light soft pink */
+    #ff5da9 55%,
+    #000000 100%      /* fade to black */
+  );
+  opacity: 0.7;
+  filter: blur(85px);
+  z-index: -1;
+  pointer-events: none;
+}
+#lamp2 {
+  width: 800px;
+  height: 900px;
+  position: absolute;
+  right: -600px; /* mirror of left */
+  top: 250px;
+  background: radial-gradient(
+    ellipse at center,
+    #fff8dc 0%,        /* light cream base */
+    #ffe066 25%,       /* more yellow */
+    #ffc107 45%,       /* deeper warm yellow */
+    #ffb6c1 55%,       /* light soft pink */
+    #ff5da9 55%,       /* brighter pink punch */
+    #000000 100%       /* fade to black */
+  );
+  opacity: 0.7;
+  filter: blur(85px);
+  z-index: -1;
+  pointer-events: none;
+}
+#contact {
+  background: linear-gradient(to right, #ff9966, #ff5bd8); /* warm orange to pink */
+  color: white;
+  padding: 0.4rem 1.4rem;
+  border-radius: 12px; /* pill shape */
+  border: 2px solid #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 0 10px #ff5bd8, 0 0 25px rgba(255, 91, 216, 0.6);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#contact:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff5bd8, 0 0 40px rgba(255, 91, 216, 0.75);
+}
+
+#basic {
+  background: white; /* warm orange to pink */
+  color: black;
+  padding: 0.4rem 1.4rem;
+  border-radius: 12px; /* pill shape */
+  border: 2px solid #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#basic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff5bd8, 0 0 40px rgba(255, 91, 216, 0.75);
+}
+
