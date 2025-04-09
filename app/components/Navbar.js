@@ -94,9 +94,9 @@ const Navbar = () => {
               space-y-4 md:space-y-0 md:space-x-6 lg:space-x-10
               py-4 md:py-0 rounded-2xl md:rounded-none transition-all duration-300 font-semibold`}
           >
-            <NavLink href="#landing">Landing</NavLink>
-            <NavLink href="#about">About</NavLink>
-            <NavLink href="#services">Experience</NavLink>
+            <NavLink href="#main">Landing</NavLink>
+            <NavLink href="#projects">Experience</NavLink>
+            <NavLink href="#services">Services</NavLink>
             <NavLink href="#projects">Projects</NavLink>
             <NavLink href="#foundersnote">Tools & More</NavLink>
 

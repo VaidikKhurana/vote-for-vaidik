@@ -23,6 +23,7 @@ body {
   background: black;
   color: var(--foreground);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 :root {
   --font-sans: var(--font-inter);
@@ -134,7 +135,46 @@ body {
   z-index: 0;
   pointer-events: none;
 }
-
+#lamp4 {
+  width: 900px;
+  height: 400px;
+  position: absolute;
+  right: -690px; /* position it off to the right */
+  top: 2000px;
+  background: radial-gradient(
+    ellipse at center,
+    #fff8dc 0%,
+    #e20a93 25%,
+    #ffe207 45%,
+    #ff0026 55%,
+    #ff5da9 70%,
+    #000000 100%
+  );
+  opacity: 0.7;
+  filter: blur(85px);
+  z-index: 0;
+  pointer-events: none;
+}
+#lamp5 {
+  width: 900px;
+  height: 400px;
+  position: absolute;
+  left: -690px; /* position it off to the right */
+  top: 2000px;
+  background: radial-gradient(
+    ellipse at center,
+    #fff8dc 0%,
+    #e20a93 25%,
+    #ffe207 45%,
+    #ff0026 55%,
+    #ff5da9 70%,
+    #000000 100%
+  );
+  opacity: 0.7;
+  filter: blur(85px);
+  z-index: 0;
+  pointer-events: none;
+}
 #projects{
   overflow: visible;
 }
