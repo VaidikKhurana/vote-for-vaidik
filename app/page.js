@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoadingScreen from "./components/LoadingScreen";
+import FounderPage from "./components/Founderpage";
 // Add any other components you use
 
 const Section = ({ children }) => {
@@ -134,12 +135,6 @@ const Page = () => {
         
         
     </section>
-
-          <section className="flex flex-col items-center justify-center min-h-14"></section>
-          <section className="flex flex-col p-16 min-h-screen">
-            <div id="lamp4"></div>
-          </section>
-
           <Footer />
         </motion.div>
       )}
