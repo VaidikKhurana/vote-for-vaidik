@@ -13,7 +13,7 @@ const Footer = () => {
         <div className='ml-[70vw] flex flex-col gap-2'>
             Site operational since <br></br> <span className='text-[#666666]'>8th April</span>
             <p className='text-[#666666]'>v0.6 beta dev</p>
-            <p className={`${dancingScript.variable} font-sans`}>vaidik-five.vercel.app</p>
+            <p className={`font-sans`}>vaidik-five.vercel.app</p>
         </div>
     </div>
   )
