@@ -8,7 +8,13 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+import { Dancing_Script } from "next/font/google";
 
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dancing",
+});
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],

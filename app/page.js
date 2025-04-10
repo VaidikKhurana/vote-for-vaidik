@@ -2,12 +2,11 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
+import ControlPanel from "./components/ControlPanel";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoadingScreen from "./components/LoadingScreen";
 import FounderPage from "./components/Founderpage";
-// Add any other components you use
 
 const Section = ({ children }) => {
   const { ref, inView } = useInView({
@@ -30,17 +29,22 @@ const Section = ({ children }) => {
 
 const Page = () => {
   const [hasEntered, setHasEntered] = useState(false);
+  const [isMuted, setIsMuted] = useState(false); // <--- this manages toggle state
   const audioRef = useRef(null);
+
+  const toggleMute = () => {
+    setIsMuted((prev) => !prev);
+  };
 
   useEffect(() => {
     if (hasEntered && audioRef.current) {
       const audio = audioRef.current;
-      audio.currentTime = 1; // ⏱️ Start from 1 second
+      audio.currentTime = 1;
       audio.volume = 0;
+
       audio
         .play()
         .then(() => {
-          // Gradually fade in volume
           let vol = 0;
           const fadeIn = setInterval(() => {
             if (vol < 1) {
@@ -51,16 +55,20 @@ const Page = () => {
             }
           }, 100);
         })
-        .catch((err) => {
-          console.warn("Audio autoplay failed:", err);
-        });
+        .catch((err) => console.warn("Autoplay failed", err));
     }
   }, [hasEntered]);
-  
+
+  // 🔊 Mute handler
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
   return (
     <div>
       <audio ref={audioRef} src="/trach.mp3" loop />
-
       <AnimatePresence>
         {!hasEntered && <LoadingScreen onEnter={() => setHasEntered(true)} />}
       </AnimatePresence>
@@ -71,6 +79,7 @@ const Page = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
         >
+          <ControlPanel isMuted={isMuted} toggleMute={toggleMute} />
           {/* Main Hero Section */}
           <Section>
             <section
@@ -135,6 +144,7 @@ const Page = () => {
         
         
     </section>
+    
           <Footer />
         </motion.div>
       )}
