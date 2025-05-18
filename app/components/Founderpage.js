@@ -1,42 +1,46 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-export default function FounderPage() {
+const FounderPage = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <div
-      className="relative min-h-screen flex items-center justify-center text-white font-sans"
-      style={{
-        fontFamily: "Geist, sans-serif",
-        backgroundImage: "url('/ChatGPT Image Apr 9, 2025, 11_29_16 PM.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+    <section
+      id="founder"
+      className="min-h-screen flex flex-col justify-center items-center p-16 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-0" />
+      {/* Neon Grid Background */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('/neon-grid.png')] bg-cover opacity-10 pointer-events-none" />
 
       <motion.div
-        className="relative z-10 max-w-3xl p-10 rounded-2xl border border-white/10 bg-black/60 backdrop-blur-md shadow-xl"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        ref={ref}
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1.2, type: "spring", stiffness: 30 }}
+        className="text-center z-10"
       >
-        <h1 className="text-5xl font-bold text-white mb-4 leading-tight">
-          Founder of <span className="text-[#ff5cdd]">vaidik.tech</span>
+        <h1 className="font-extrabold text-6xl md:text-7xl text-[#ff4df8] drop-shadow-[0_0_10px_#ff4df8]">
+          The Mind Behind <br />
+          <span className="text-cyan-400 drop-shadow-[0_0_10px_#00ffff]">vaidik.tech</span>
         </h1>
-        <h2 className="text-2xl font-light text-white/80 mb-6">
-          "I build the future, one exploit at a time."
-        </h2>
-        <p className="text-white/90 text-lg leading-relaxed">
-          I'm an ethical hacker and developer building out innovative tools and
-          applications—from hardware setups to full-stack web systems. I push
-          the boundaries of cyber security, automation, and design with flair.
-          <br />
-          <br />
-          Welcome to the grind, neon-drenched in passion and precision.
+
+        <p className="text-xl md:text-2xl mt-4 text-gray-300 font-light">
+          Passion drives <span className="text-pink-400">innovation</span>, innovation creates
+          <span className="text-blue-400"> impact</span>, impact defines <span className="text-purple-400">legacy</span>.
         </p>
+
+        <img
+          src="/founder-vc.png"
+          alt="Founder looking cool AF"
+          className="w-64 h-64 mt-10 rounded-full border-4 border-[#ff4df8] shadow-[0_0_20px_#ff4df8]"
+        />
       </motion.div>
-    </div>
+    </section>
   );
-}
+};
+
+export default FounderPage;

@@ -29,7 +29,8 @@ const Section = ({ children }) => {
 
 const Page = () => {
   const [hasEntered, setHasEntered] = useState(false);
-  const [isMuted, setIsMuted] = useState(false); // <--- this manages toggle state
+  const [isMuted, setIsMuted] = useState(false);
+  const [voteCount, setVoteCount] = useState(0);
   const audioRef = useRef(null);
 
   const toggleMute = () => {
@@ -59,12 +60,15 @@ const Page = () => {
     }
   }, [hasEntered]);
 
-  // 🔊 Mute handler
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.muted = isMuted;
     }
   }, [isMuted]);
+
+  const handleVote = () => {
+    setVoteCount((prev) => prev + 1);
+  };
 
   return (
     <div>
@@ -80,34 +84,34 @@ const Page = () => {
           transition={{ duration: 1.5 }}
         >
           <ControlPanel isMuted={isMuted} toggleMute={toggleMute} />
-          {/* Main Hero Section */}
           <Section>
             <section
               id="main"
-              className="flex flex-col min-h-screen justify-center items-center pb-[6vw]"
+              className="flex flex-col min-h-screen justify-center items-center pb-[6vw] px-4"
             >
               <Navbar />
-              <h1 className="text-white font-semibold text-6xl max-w-[70vw] text-center pt-[9vw]">
-                Innovating with purpose while Building the future.
+              <h1 className="text-white font-semibold text-4xl sm:text-5xl lg:text-6xl text-center pt-[9vw] max-w-4xl">
+                Making choices is hard — Save your headache, Vote for Vaidik!
               </h1>
-              <div className="mt-4 text-[#666666] text-2xl max-w-[67vw] text-center">
-                Hi! Welcome to vaidik.tech we are a group thriving in various
-                sectors of technology particularly in coding based application we
-                also provide hardware and software solutions. I as the founder
-                welcome you to my project.
+              <div className="mt-4 text-[#999999] text-lg sm:text-xl max-w-3xl text-center">
+                Hi! I'm Vaidik, a student of grade 9, participating in the student council elections. I’d love your support as I run for Head Boy, Sports Captain and House Captain.
               </div>
-              <div className="flex gap-4 mb-2 mt-4">
+              <div className="flex flex-col sm:flex-row gap-4 my-6 items-center">
                 <button id="contact" className="text-white border px-4 py-2 rounded-lg">
-                  Contact Us
+                  <a href="/vote" target="_blank" rel="noopener noreferrer">
+                    Vote
+                  </a>
                 </button>
-                <button id="basic" className="text-black bg-white px-4 py-2 rounded-lg">
-                  Not Impressed?
-                </button>
+                
               </div>
-              <div className="rounded-xl w-[55vw] h-[30vw] border-2 mt-4 border-[#666666] p-4 overflow-hidden">
+
+              {/* Vote Counter Display */}
+            
+
+              <div className="rounded-xl w-full sm:w-[70vw] h-[40vw] sm:h-[30vw] border-2 mt-6 border-[#666666] p-2 overflow-hidden">
                 <img
                   src="https://www.google.com/chrome/static/images/dev-components/chrome-gallery-5-2x.webp"
-                  alt="Chrome dev tools preview"
+                  alt="Campaign Visual"
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>
@@ -117,35 +121,8 @@ const Page = () => {
             </section>
           </Section>
 
-          {/* Skills Section */}
-          <section id='projects'className='bg-black min-h-screen flex flex-col p-16'>
-        <h1 className='font-semibold text-5xl mt-11'>Things that may catch your <br></br> attention, our skills</h1>
-        <p className='text-xl text-[#666666] mt-2'>Skills are the qualities which form one's personality, along with that they  play an important role in <br></br>knowing oneself here are ours.</p>
-        <div className='flex mt-4 gap-6'>
-          <div className='border-2 border-[#292929] bg-[#0b0b0b] rounded-lg w-[25vw] h-[22vw] p-4 pt-22 pl-7 pr-2'>
-              <img src='/1.webp' className='w-12'></img>
-              <h1 className='text-2xl font-semibold mt-2'>Creative brilliance.</h1>
-              <p className='text-[#666666]'>We thrive on creative brilliance that extends far beyond just writing code. Our team blends technical precision with imaginative thinking to deliver solutions that not only work flawlessly.</p>
-          </div>
-          <div className='border-2 border-[#292929] bg-[#0b0b0b] rounded-lg w-[25vw] h-[22vw] p-4 pt-20 pl-7 pr-2'>
-              <img src='/2.webp' className='w-12'></img>
-              <h1 className='text-2xl font-semibold mt-2'>Critical Thinking</h1>
-              <p className='text-[#666666]'>We approach every challenge with sharp critical thinking, breaking down problems to their core. It’s not just about solutions—it’s about smart, efficient ones.At vaidik.tech, we analyze and adapt.
-</p>
-          </div>
-          <div className='border-2 border-[#292929] bg-[#0b0b0b] rounded-lg w-[25vw] h-[22vw] p-4 pt-21 pl-7 pr-2'>
-              <img src='/3.webp' className='w-12'></img>
-              <h1 className='text-2xl font-semibold mt-2'>Prioritising Effeciency</h1>
-              <p className='text-[#666666]'>We prioritize delivering efficient solutions that save both time and resources. Speed matters—but never at the cost of quality.At vaidik.tech, we streamline every process to meet deadlines.</p>
-          </div>
-          <div id='lamp3'></div>
-        </div>
-
-        
-        
-    </section>
-    
-          <Footer />
+          
+          
         </motion.div>
       )}
     </div>

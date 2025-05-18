@@ -94,11 +94,9 @@ const Navbar = () => {
               space-y-4 md:space-y-0 md:space-x-6 lg:space-x-10
               py-4 md:py-0 rounded-2xl md:rounded-none transition-all duration-300 font-semibold`}
           >
-            <NavLink href="#main">Landing</NavLink>
-            <NavLink href="#projects">Experience</NavLink>
-            <NavLink href="#services">Services</NavLink>
-            <NavLink href="#projects">Projects</NavLink>
-            <NavLink href="#foundersnote">Tools & More</NavLink>
+        
+            <NavLink href="#main">Vote Vaidik For Head Boy 2025</NavLink>
+            
 
             {/* Time */}
             <div className="text-white/80 flex items-center gap-2 text-sm md:text-base font-semibold mr-16">
