@@ -91,7 +91,7 @@ const Page = () => {
             >
               <Navbar />
               <h1 className="text-white font-semibold text-4xl sm:text-5xl lg:text-6xl text-center pt-[9vw] max-w-4xl">
-                Making choices is hard — Save your headache, Vote for Vaidik!
+                Making choices is hard — Save your Stress, Vote for the Best!
               </h1>
               <div className="mt-4 text-[#999999] text-lg sm:text-xl max-w-3xl text-center">
                 Hi! I'm Vaidik, a student of grade 9, participating in the student council elections. I’d love your support as I run for Head Boy, Sports Captain and House Captain.
